@@ -3,7 +3,7 @@ import React, { useEffect, useCallback } from 'react';
 
 const Modal = ({ imageUrl, alt, onClose }) => {
   const handleEscape = useCallback(
-    event => {
+    (event) => {
       if (event.keyCode === 27) {
         onClose();
       }
