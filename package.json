@@ -1,8 +1,8 @@
 {
-  "name": "goti-react-hw-03-images-finder",
+  "name": "goit-react-hw-03-images-finder",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Mariusz-72.github.io/goti-react-hw-03-images-finder/",
+  "homepage": "https://Mariusz-72.github.io/goit-react-hw-03-images-finder/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
