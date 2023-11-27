@@ -102,3 +102,8 @@ body {
   margin: 0 auto; /* Wyśrodkowanie obrazka */
 }
 
+.loader {
+  display: flex;
+  justify-content: center;
+  margin-top: 200px;
+}
