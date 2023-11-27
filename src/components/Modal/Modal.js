@@ -1,31 +1,22 @@
-// Modal.js
-import React, { useEffect, useCallback } from 'react';
+import React, { Component } from 'react';
 
-const Modal = ({ imageUrl, alt, onClose }) => {
-  const handleEscape = useCallback(
-    (event) => {
-      if (event.keyCode === 27) {
-        onClose();
-      }
-    },
-    [onClose]
-  );
+class Modal extends Component {
+  handleClose = () => {
+    const { onClose } = this.props;
+    onClose();
+  };
 
-  useEffect(() => {
-    window.addEventListener('keydown', handleEscape);
+  render() {
+    const { imageUrl, alt } = this.props;
 
-    return () => {
-      window.removeEventListener('keydown', handleEscape);
-    };
-  }, [handleEscape]);
-
-  return (
-    <div className="overlay" onClick={onClose}>
-      <div className="modal">
-        <img src={imageUrl} alt={alt} />
+    return (
+      <div className="modal-overlay" onClick={this.handleClose}>
+        <div className="modal">
+          <img src={imageUrl} alt={alt} className="modal-image" />
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default Modal;

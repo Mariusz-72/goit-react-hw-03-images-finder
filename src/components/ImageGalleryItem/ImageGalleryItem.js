@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const ImageGalleryItem = ({ imageUrl, alt, onClick }) => {
-  return (
-    <li className="gallery-item" onClick={onClick}>
-      <img
-        src={imageUrl}
-        alt={alt}
-        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-      />
-    </li>
-  );
-};
+class ImageGalleryItem extends Component {
+  handleClick = () => {
+    const { onClick, imageUrl } = this.props;
+    onClick(imageUrl);
+  };
+
+  render() {
+    const { imageUrl, alt } = this.props;
+
+    return (
+      <div className="image-gallery-item" onClick={this.handleClick}>
+        <img src={imageUrl} alt={alt} className="image" />
+      </div>
+    );
+  }
+}
 
 export default ImageGalleryItem;
